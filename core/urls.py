@@ -9,5 +9,6 @@ urlpatterns = [
     path("user_info", views.user_info),
     path("private_place", views.private_place),
     path("staff_place/", views.staff_place),
+    path("add_messages/", views.add_messages),
 
 ]
