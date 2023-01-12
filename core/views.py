@@ -1,6 +1,6 @@
 from django.http import HttpResponse
 from django.shortcuts import render
-from django.contrib.auth.decorators import login_required
+from django.contrib.auth.decorators import login_required, user_passes_test
 from .models import Blog
 # Create your views here.
 
@@ -44,3 +44,7 @@ def user_info(request):
 @login_required
 def private_place(request):
     return HttpResponse("Shh, members only", content_type="text/plain")
+
+@user_passes_test(lambda user: user.is_staff)
+def staff_place(request):
+    return HttpResponse("Employees must wash hands", content_type='text/plain')

@@ -8,5 +8,6 @@ urlpatterns = [
     path("see_request/", views.see_request),
     path("user_info", views.user_info),
     path("private_place", views.private_place),
+    path("staff_place/", views.staff_place),
 
 ]
